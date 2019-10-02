@@ -1,10 +1,18 @@
 import '@royalnavy/css-framework'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import { Dashboard } from './pages/Dashboard'
+import { Manage } from './pages/Manage'
 
 ReactDOM.render(
-  <div>
-    <h1>Hello, World!</h1>
-  </div>,
+  <Router>
+    <div>
+      <h1>NELSON Coffee</h1>
+    </div>
+    <Route path="/" component={Dashboard} exact />
+    <Route path="/manage/:id?" component={Manage} />
+  </Router>,
   document.getElementById('root')
 )
