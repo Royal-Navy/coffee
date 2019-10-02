@@ -1,0 +1,52 @@
+@import '@royalnavy/css-framework';
+
+.infocard {
+  border-radius: 4px;
+  border: 1px solid color(neutral, 100);
+  background-color: color(neutral, white);
+  width: 20.75rem;
+}
+
+.infocard__header {
+  display: flex;
+  justify-content: space-between;
+  padding: spacing(4);
+}
+
+.infocard__header .rn-avatar {
+  display: inline-flex;
+  margin-right: spacing(2);
+}
+
+.infocard__header .infocard__name {
+  vertical-align: middle;
+}
+
+.infocard__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: spacing(4) spacing(4) 0;
+}
+
+.infocard .rn-tab-set__body {
+  padding-top: 0;
+}
+
+.subscriber-details {
+  background-color: color(neutral, 000);
+  padding: spacing(4);
+}
+
+.subscriber-details__list {
+
+}
+
+.payment-list {
+  margin: 0;
+  padding: spacing(4) spacing(4) 0;
+}
+
+.payment-list__item {
+  display: flex;
+  justify-content: space-between;
+}
