@@ -2,10 +2,14 @@ import React from 'react'
 
 import './Dashboard.scss'
 
+import { DefaultLayout } from '../../layouts/Default'
+
 export const Dashboard = props => {
   return (
-    <main>
-      <h1>Dashboard</h1>
-    </main>
+    <DefaultLayout>
+      <section>
+        <h1>Dashboard</h1>
+      </section>
+    </DefaultLayout>
   )
 }

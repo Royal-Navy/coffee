@@ -2,6 +2,8 @@ import React from 'react'
 
 import './Manage.scss'
 
+import { DefaultLayout } from '../../layouts/Default'
+
 export const Manage = props => {
   const {
     match: {
@@ -10,9 +12,11 @@ export const Manage = props => {
   } = props
 
   return (
-    <main>
-      <h1>Manage Subscriptions</h1>
-      <h2>Manage {id || ''}</h2>
-    </main>
+    <DefaultLayout>
+      <section>
+        <h1>Manage Subscriptions</h1>
+        <h2>Manage {id || ''}</h2>
+      </section>
+    </DefaultLayout>
   )
 }
