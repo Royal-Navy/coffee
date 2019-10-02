@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Default.scss'
+
 import { Masthead } from '@royalnavy/react-component-library'
 
 export const DefaultLayout = ({ children }) => {
@@ -14,7 +16,7 @@ export const DefaultLayout = ({ children }) => {
         title="NELSON Coffee"
         user={{ initials: 'TH', href: '#' }}
       />
-      <main>{children}</main>
+      <main className="layout__main">{children}</main>
     </>
   )
 }

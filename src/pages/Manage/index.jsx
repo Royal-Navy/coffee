@@ -14,8 +14,8 @@ export const Manage = props => {
   return (
     <DefaultLayout>
       <section>
-        <h1>Manage Subscriptions</h1>
-        <h2>Manage {id || ''}</h2>
+        <h1 className="page__heading">Manage Subscriptions</h1>
+        <h2 className="page__sub-heading">Manage {id || ''}</h2>
       </section>
     </DefaultLayout>
   )

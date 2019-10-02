@@ -8,7 +8,7 @@ export const Dashboard = props => {
   return (
     <DefaultLayout>
       <section>
-        <h1>Dashboard</h1>
+        <h1 className="page__heading">Dashboard</h1>
       </section>
     </DefaultLayout>
   )

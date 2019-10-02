@@ -1,0 +1,21 @@
+@import '@royalnavy/css-framework';
+
+body {
+  color: color(neutral, 500);
+}
+
+.layout__main {
+  background-color: #F8FAFC;
+  padding: spacing(6) spacing(8);
+}
+
+.page__heading {
+  font-size: font-size(m);
+  font-weight: normal;
+}
+
+.page__sub-heading {
+  font-size: font-size(s);
+  color: color(neutral, 300);
+  font-weight: normal;
+}
