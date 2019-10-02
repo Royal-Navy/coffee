@@ -3,11 +3,11 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 import { reducer as subscriptions } from './subscriptions'
-import { reducer as payments } from './payments'
+import { reducer as costs } from './costs'
 
 const rootReducer = combineReducers({
   subscriptions,
-  payments,
+  costs,
 })
 
 export function createAppStore() {

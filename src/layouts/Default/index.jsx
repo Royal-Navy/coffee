@@ -17,8 +17,21 @@ export const DefaultLayout = withRouter(({ children, location }) => {
         homeLink={{ href: '/' }}
         LinkComponent={Link}
         navItems={[
-          { label: 'Dashboard', to: '/', active: isActive('/') },
-          { label: 'Manage', to: '/manage', active: isActive('/manage') },
+          {
+            label: 'Dashboard',
+            to: '/',
+            active: isActive('/'),
+          },
+          {
+            label: 'Subscriptions',
+            to: '/subscriptions',
+            active: isActive('/subscriptions'),
+          },
+          {
+            label: 'Costs',
+            to: '/costs',
+            active: isActive('/costs'),
+          },
         ]}
         user={{ initials: 'TH', href: '#' }}
         Logo={AppLogo}

@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './Manage.scss'
+import './Subscriptions.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
 import { SubscriberList } from '../../components/presentational/SubscriberList'
 import { InfoCard } from '../../components/presentational/InfoCard'
 
-export const Manage = props => {
+export const Subscriptions = props => {
   const {
     match: {
       params: { id },
