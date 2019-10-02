@@ -1,0 +1,4 @@
+export const ActionTypes = {
+  CREATE_PAYMENT: 'CREATE_PAYMENT',
+  DELETE_PAYMENT: 'DELETE_PAYMENT',
+}
