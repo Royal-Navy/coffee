@@ -14,9 +14,6 @@ const store = createAppStore()
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
-        <h1>NELSON Coffee</h1> {/* Masthead */}
-      </div>
       <Route path="/" component={Dashboard} exact />
       <Route path="/manage/:id?" component={Manage} />
     </Router>
