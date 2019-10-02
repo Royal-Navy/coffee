@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding: spacing(4);
+  border-bottom: 1px solid color(neutral, 100);
 }
 
 .infocard__header .rn-avatar {
@@ -38,7 +39,7 @@
 }
 
 .subscriber-details__list {
-
+  //
 }
 
 .payment-list {

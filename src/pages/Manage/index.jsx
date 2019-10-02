@@ -3,6 +3,7 @@ import React from 'react'
 import './Manage.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
+import { SubscriberList } from '../../components/presentational/SubscriberList'
 import { InfoCard } from '../../components/presentational/InfoCard'
 
 export const Manage = props => {
@@ -19,6 +20,9 @@ export const Manage = props => {
         <h2 className="page__sub-heading">Manage {id || ''}</h2>
       </section>
       <section>
+        <div style={{ float: 'left' }}>
+          <SubscriberList />
+        </div>
         <div style={{ float: 'right' }}>
           <InfoCard />
         </div>
