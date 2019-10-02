@@ -1,18 +1,24 @@
 import React from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
 import './Default.scss'
 
 import { Masthead } from '@royalnavy/react-component-library'
 import { ReactComponent as AppLogo } from './logo.svg'
 
-export const DefaultLayout = ({ children }) => {
+export const DefaultLayout = withRouter(({ children, location }) => {
+  function isActive(path) {
+    return path === location.pathname
+  }
+
   return (
     <>
       <Masthead
         homeLink={{ href: '/' }}
+        LinkComponent={Link}
         navItems={[
-          { label: 'Dashboard', href: '/', active: true },
-          { label: 'Manage', href: '/manage' },
+          { label: 'Dashboard', to: '/', active: isActive('/') },
+          { label: 'Manage', to: '/manage', active: isActive('/manage') },
         ]}
         user={{ initials: 'TH', href: '#' }}
         Logo={AppLogo}
@@ -20,4 +26,4 @@ export const DefaultLayout = ({ children }) => {
       <main className="layout__main">{children}</main>
     </>
   )
-}
+})
