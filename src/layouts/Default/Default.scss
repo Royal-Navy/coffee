@@ -4,6 +4,10 @@ body {
   color: color(neutral, 500);
 }
 
+.rn-masthead__service-name svg {
+  width: 10rem;
+}
+
 .layout__main {
   background-color: #F8FAFC;
   padding: spacing(6) spacing(8);
