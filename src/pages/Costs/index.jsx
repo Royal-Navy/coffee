@@ -4,6 +4,8 @@ import './Costs.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
 
+import { IconPerson } from '@royalnavy/icon-library'
+
 export const Costs = props => {
   const {
     match: {
@@ -14,8 +16,12 @@ export const Costs = props => {
   return (
     <DefaultLayout>
       <section>
-        <h1 className="page__heading">Manage Costs</h1>
-        <h2 className="page__sub-heading">Manage {id || ''}</h2>
+        <h1 className="page__heading">
+          <i className="page__heading-icon">
+            <IconPerson />
+          </i>
+          <span>Manage Costs</span>
+        </h1>
       </section>
     </DefaultLayout>
   )

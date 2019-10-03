@@ -6,6 +6,8 @@ import { DefaultLayout } from '../../layouts/Default'
 import { SubscriberList } from '../../components/presentational/SubscriberList'
 import { InfoCard } from '../../components/presentational/InfoCard'
 
+import { IconPerson } from '@royalnavy/icon-library'
+
 export const Subscriptions = props => {
   const {
     match: {
@@ -16,8 +18,12 @@ export const Subscriptions = props => {
   return (
     <DefaultLayout>
       <section>
-        <h1 className="page__heading">Manage Subscriptions</h1>
-        <h2 className="page__sub-heading">Manage {id || ''}</h2>
+        <h1 className="page__heading">
+          <i className="page__heading-icon">
+            <IconPerson />
+          </i>
+          <span>Manage Subscriptions</span>
+        </h1>
       </section>
       <section>
         <div style={{ float: 'left' }}>

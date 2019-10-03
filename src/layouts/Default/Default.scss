@@ -15,14 +15,28 @@ body {
 }
 
 .page__heading {
-  font-size: font-size(m);
-  font-weight: normal;
+  display: flex;
+  align-items: center;
+  font-size: font-size(l);
+  font-weight: 600;
 }
 
-.page__sub-heading {
-  font-size: font-size(s);
-  color: color(neutral, 300);
-  font-weight: normal;
+.page__heading-icon {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: color(primary, 200);
+  margin-right: spacing(2);
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: color(primary, 500);
+  }
 }
 
 /* Fixing issues with @royalnavy component styles */
