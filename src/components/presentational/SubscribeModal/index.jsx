@@ -50,7 +50,7 @@ export const SubscribeModal = withRouter(({ history }) => {
           <p>Manage the size and frequency of the Subscriber's payments.</p>
         </div>
       </header>
-      <div className="subscribe-modal__body">Hello, World!</div>
+      <div className="subscribe-modal__body"></div>
     </Modal>
   )
 })
