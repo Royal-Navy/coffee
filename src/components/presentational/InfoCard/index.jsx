@@ -67,11 +67,13 @@ export const InfoCard = withRouter(({ history, id }) => {
                 </span>
               </div>
               <div className="subscriber-details__payments">
-                <div>
+                <div className="subscriber-details__amount">
                   <span>Subscription Amount</span>
-                  <span>&pound;4 /week</span>
+                  <span>
+                    &pound;4 <span>/week</span>
+                  </span>
                 </div>
-                <div>
+                <div className="subscriber-details__outstanding">
                   <span>Outstanding Payments</span>
                   <span>&pound;12</span>
                 </div>

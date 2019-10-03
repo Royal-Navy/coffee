@@ -127,3 +127,15 @@
     }
   }
 }
+
+.subscriber-details__amount {
+  span span {
+    color: color(neutral, 300);
+  }
+}
+
+.subscriber-details__outstanding {
+  span:last-of-type {
+    color: color(danger, 400);
+  }
+}
