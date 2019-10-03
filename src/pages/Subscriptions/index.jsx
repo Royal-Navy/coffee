@@ -56,7 +56,7 @@ export const Subscriptions = withRouter(props => {
         <Route exact path="/subscriptions/create" component={SubscribeModal} />
         <Route
           exact
-          path="/subscriptions/update/:id?"
+          path="/subscriptions/update/:id"
           component={SubscribeModal}
         />
       </Switch>
