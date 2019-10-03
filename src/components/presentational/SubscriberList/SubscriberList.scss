@@ -1,3 +1,44 @@
+@import '@royalnavy/css-framework';
+
 .subscriber-list {
-  //
+  background-color: color(neutral, white);
+  padding: spacing(4);
+  border-radius: 4px;
+  border: 1px solid color(neutral, 100);
+  font-size: font-size(xs);
+  font-weight: 600;
+  color: color(neutral, 400);
+}
+
+.subscriber-list__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subscriber-list__row {
+  padding: spacing(2) 0;
+  border-bottom: 1px dashed color(neutral, 100);
+
+  td {
+    padding: spacing(2) 0;
+  }
+}
+
+.subscriber-list__name {
+  display: inline-flex;
+  align-items: center;
+
+  .rn-avatar {
+    margin-right: spacing(3);
+  }
+}
+
+.subscriber-list__status {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  svg {
+    margin-right: spacing(1);
+  }
 }
