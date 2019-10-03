@@ -12,6 +12,10 @@
   justify-content: space-between;
   padding: spacing(4);
   border-bottom: 1px solid color(neutral, 100);
+
+  .rn-badge {
+    line-height: 1rem;
+  }
 }
 
 .infocard__header .rn-avatar {
@@ -23,10 +27,55 @@
   vertical-align: middle;
 }
 
-.infocard__footer {
+.infocard__title {
+  display: block;
+  text-transform: uppercase;
+  color: color(neutral, 300);
+  font-size: font-size(xs);
+  font-weight: 600;
+  border-bottom: 1px solid color(neutral, 100);
+  padding-bottom: spacing(4);
+}
+
+.infocard__title--bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+
+    &:last-of-type {
+      color: color(neutral, 400);
+
+      svg {
+        color: color(danger, 500);
+        margin-right: spacing(2);
+      }
+    }
+  }
+}
+
+.infocard__footer {
   padding: spacing(4) spacing(4) 0;
+
+  p {
+    font-size: font-size(xs);
+    padding: spacing(2) 0;
+    color: color(neutral, 400);
+    font-weight: 600;
+
+    em {
+      color: color(neutral, 500);
+      font-style: normal;
+    }
+  }
+}
+
+.infocard__buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .infocard .rn-tab-set__body {
@@ -39,15 +88,41 @@
 }
 
 .subscriber-details__list {
-  //
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
-.payment-list {
-  margin: 0;
-  padding: spacing(4) spacing(4) 0;
+.subscriber-details__list-item {
+  padding: spacing(1) 0;
+  color: color(neutral, 400);
+  font-size: font-size(xs);
+  font-weight: 600;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    svg {
+      color: color(neutral, 300);
+      margin-right: spacing(2);
+    }
+  }
 }
 
-.payment-list__item {
-  display: flex;
-  justify-content: space-between;
+.subscriber-details__payments {
+  padding: spacing(4) 0;
+  border-bottom: 1px dashed color(neutral, 100);
+  font-size: font-size(xs);
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: spacing(1) 0;
+    font-weight: 600;
+
+    span:last-of-type {
+      font-size: font-size(s);
+    }
+  }
 }

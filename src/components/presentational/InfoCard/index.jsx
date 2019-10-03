@@ -8,7 +8,16 @@ import {
   Tab,
 } from '@royalnavy/react-component-library'
 
+import {
+  IconEmail,
+  IconSmartphone,
+  IconChat,
+  IconWarning,
+} from '@royalnavy/icon-library'
+
 import './InfoCard.scss'
+
+import { PaymentList } from '../PaymentList'
 
 export const InfoCard = props => {
   return (
@@ -26,37 +35,60 @@ export const InfoCard = props => {
         <Tab title="Subscriber Details">
           <section>
             <div className="subscriber-details">
-              <span className="subscriber-details__title">Personal</span>
+              <span className="infocard__title">Personal</span>
               <ul className="subscriber-details__list">
-                <li>
+                <li className="subscriber-details__list-item">
                   <span className="subscriber-details__email">
+                    <IconEmail />
                     charli.roberts@mod.gov.uk
                   </span>
                 </li>
-                <li>
+                <li className="subscriber-details__list-item">
                   <span className="subscriber-details__phone">
+                    <IconSmartphone />
                     0778 0548 372
                   </span>
                 </li>
-                <li>
-                  <span className="subscriber-details__tweet">@charli</span>
+                <li className="subscriber-details__list-item">
+                  <span className="subscriber-details__tweet">
+                    <IconChat />
+                    @charli
+                  </span>
                 </li>
               </ul>
             </div>
             <footer className="infocard__footer">
-              <Button variant="secondary">Pause</Button>
-              <Button variant="secondary">Manage Subscriber</Button>
+              <div className="infocard__title infocard__title--bottom">
+                <span>Subscription</span>
+                <span>
+                  <IconWarning />
+                  Payments Due
+                </span>
+              </div>
+              <div className="subscriber-details__payments">
+                <div>
+                  <span>Subscription Amount</span>
+                  <span>&pound;4 /week</span>
+                </div>
+                <div>
+                  <span>Outstanding Payments</span>
+                  <span>&pound;12</span>
+                </div>
+              </div>
+              <p>
+                Charli's subscription is paid by <em>Direct Debit</em> every{' '}
+                <em>Week</em>.
+              </p>
+              <div className="infocard__buttons">
+                <Button variant="secondary">Pause</Button>
+                <Button variant="secondary">Manage Subscriber</Button>
+              </div>
             </footer>
           </section>
         </Tab>
         <Tab title="Payment History">
           <section>
-            <ol className="payment-list">
-              <li className="payment-list__item">
-                <span className="payment-list__amount">£4</span>
-                <span className="payment-list__date">01/08/2019</span>
-              </li>
-            </ol>
+            <PaymentList />
           </section>
         </Tab>
       </TabSet>
