@@ -18,11 +18,6 @@ export const DefaultLayout = withRouter(({ children, location }) => {
         LinkComponent={Link}
         navItems={[
           {
-            label: 'Dashboard',
-            to: '/',
-            active: isActive('/'),
-          },
-          {
             label: 'Subscriptions',
             to: '/subscriptions',
             active: isActive('/subscriptions'),
