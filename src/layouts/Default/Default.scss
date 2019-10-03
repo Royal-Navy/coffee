@@ -42,5 +42,5 @@ body {
 /* Fixing issues with @royalnavy component styles */
 
 .rn-badge.rn-badge--danger {
-  color: color(danger, 400);
+  color: color(danger, 400) !important;
 }

@@ -28,6 +28,8 @@
 }
 
 .payment-list .payment-list__amount {
+  display: flex;
+  align-items: center;
   font-size: font-size(s);
 }
 
