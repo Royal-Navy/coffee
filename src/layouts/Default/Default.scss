@@ -4,6 +4,10 @@ body {
   color: color(neutral, 500);
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .rn-masthead__service-name svg {
   width: 10rem;
 }
