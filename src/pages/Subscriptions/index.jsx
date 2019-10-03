@@ -6,6 +6,7 @@ import { DefaultLayout } from '../../layouts/Default'
 import { RecordList } from '../../components/presentational/RecordList'
 import { InfoCard } from '../../components/presentational/InfoCard'
 import { HeadingIcon } from '../../components/presentational/HeadingIcon'
+import { SubscribeModal } from '../../components/presentational/SubscribeModal'
 
 import { Button } from '@royalnavy/react-component-library'
 import { IconPerson } from '@royalnavy/icon-library'
@@ -43,6 +44,8 @@ export const Subscriptions = props => {
           <InfoCard />
         </div>
       </section>
+
+      <SubscribeModal open />
     </DefaultLayout>
   )
 }
