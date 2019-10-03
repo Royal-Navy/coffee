@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import {
   Avatar,
@@ -19,7 +20,7 @@ import './InfoCard.scss'
 
 import { PaymentList } from '../PaymentList'
 
-export const InfoCard = props => {
+export const InfoCard = withRouter(({ history, id }) => {
   return (
     <article className="infocard">
       <header className="infocard__header">
@@ -81,7 +82,12 @@ export const InfoCard = props => {
               </p>
               <div className="infocard__buttons">
                 <Button variant="secondary">Pause</Button>
-                <Button variant="secondary">Manage Subscriber</Button>
+                <Button
+                  variant="secondary"
+                  onClick={_ => history.push(`/subscriptions/update/${id}`)}
+                >
+                  Manage Subscriber
+                </Button>
               </div>
             </footer>
           </section>
@@ -94,4 +100,4 @@ export const InfoCard = props => {
       </TabSet>
     </article>
   )
-}
+})

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import { HeadingIcon } from '../HeadingIcon'
 
@@ -7,23 +8,19 @@ import { IconPerson, IconCreditCard } from '@royalnavy/icon-library'
 
 import './SubscribeModal.scss'
 
-export const SubscribeModal = ({ open = false }) => {
-  const [isOpen, setIsOpen] = useState(open)
-
+export const SubscribeModal = withRouter(({ history }) => {
   const primaryButton = {
-    onClick: event => console.log('primary'),
+    onClick: _ => console.log('primary'),
     children: 'Add Subscriber',
   }
 
   const secondaryButton = {
-    onClick: event => {
-      setIsOpen(false)
-    },
+    onClick: _ => history.push('/subscriptions'),
     children: 'Cancel',
   }
 
   const tertiaryButton = {
-    onClick: event => console.log('tertiary'),
+    onClick: _ => console.log('tertiary'),
     children: 'Delete Subscriber',
     variant: 'tertiary',
     color: 'danger',
@@ -34,7 +31,7 @@ export const SubscribeModal = ({ open = false }) => {
       primaryButton={primaryButton}
       secondaryButton={secondaryButton}
       tertiaryButton={tertiaryButton}
-      isOpen={isOpen}
+      isOpen={true}
       className="subscribe-modal"
     >
       <header className="subscribe-modal__header">
@@ -56,4 +53,4 @@ export const SubscribeModal = ({ open = false }) => {
       <div className="subscribe-modal__body">Hello, World!</div>
     </Modal>
   )
-}
+})

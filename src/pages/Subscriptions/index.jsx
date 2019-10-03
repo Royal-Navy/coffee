@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter, Route, Switch } from 'react-router-dom'
 
 import './Subscriptions.scss'
 
@@ -11,11 +12,12 @@ import { SubscribeModal } from '../../components/presentational/SubscribeModal'
 import { Button } from '@royalnavy/react-component-library'
 import { IconPerson } from '@royalnavy/icon-library'
 
-export const Subscriptions = props => {
+export const Subscriptions = withRouter(props => {
   const {
     match: {
       params: { id },
     },
+    history,
   } = props
 
   return (
@@ -34,18 +36,30 @@ export const Subscriptions = props => {
           </HeadingIcon>
           <span>Manage Subscriptions</span>
         </h1>
-        <Button variant="primary">Add Subscriber</Button>
+        <Button
+          variant="primary"
+          onClick={_ => history.push('/subscriptions/create')}
+        >
+          Add Subscriber
+        </Button>
       </section>
       <section style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ width: '100%', marginRight: '1rem' }}>
           <RecordList />
         </div>
         <div>
-          <InfoCard />
+          <InfoCard id={id} />
         </div>
       </section>
 
-      <SubscribeModal open />
+      <Switch>
+        <Route exact path="/subscriptions/create" component={SubscribeModal} />
+        <Route
+          exact
+          path="/subscriptions/update/:id?"
+          component={SubscribeModal}
+        />
+      </Switch>
     </DefaultLayout>
   )
-}
+})
