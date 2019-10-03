@@ -3,8 +3,9 @@ import React from 'react'
 import './Subscriptions.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
-import { SubscriberList } from '../../components/presentational/SubscriberList'
+import { RecordList } from '../../components/presentational/RecordList'
 import { InfoCard } from '../../components/presentational/InfoCard'
+import { HeadingIcon } from '../../components/presentational/HeadingIcon'
 
 import { Button } from '@royalnavy/react-component-library'
 import { IconPerson } from '@royalnavy/icon-library'
@@ -27,16 +28,16 @@ export const Subscriptions = props => {
         }}
       >
         <h1 className="page__heading">
-          <i className="page__heading-icon">
+          <HeadingIcon>
             <IconPerson />
-          </i>
+          </HeadingIcon>
           <span>Manage Subscriptions</span>
         </h1>
         <Button variant="primary">Add Subscriber</Button>
       </section>
       <section style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ width: '100%', marginRight: '1rem' }}>
-          <SubscriberList />
+          <RecordList />
         </div>
         <div>
           <InfoCard />

@@ -3,8 +3,11 @@ import React from 'react'
 import './Costs.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
+import { RecordList } from '../../components/presentational/RecordList'
+import { CostCard } from '../../components/presentational/CostCard'
+import { HeadingIcon } from '../../components/presentational/HeadingIcon'
 
-import { IconPerson } from '@royalnavy/icon-library'
+import { IconCreditCard } from '@royalnavy/icon-library'
 
 export const Costs = props => {
   const {
@@ -15,13 +18,28 @@ export const Costs = props => {
 
   return (
     <DefaultLayout>
-      <section>
+      <section
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '1rem',
+        }}
+      >
         <h1 className="page__heading">
-          <i className="page__heading-icon">
-            <IconPerson />
-          </i>
+          <HeadingIcon>
+            <IconCreditCard />
+          </HeadingIcon>
           <span>Manage Costs</span>
         </h1>
+      </section>
+      <section style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ width: '100%', marginRight: '1rem' }}>
+          <RecordList />
+        </div>
+        <div>
+          <CostCard />
+        </div>
       </section>
     </DefaultLayout>
   )

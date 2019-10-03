@@ -1,0 +1,75 @@
+@import '@royalnavy/css-framework';
+
+.costcard {
+  border-radius: 4px;
+  border: 1px solid color(neutral, 100);
+  background-color: color(neutral, white);
+  width: 20.75rem;
+}
+
+.costcard__header {
+  position: relative;
+  display: flex;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    height: 7rem;
+    padding-bottom: spacing(4);
+    background-color: color(neutral, 000);
+    border-bottom: 1px solid color(neutral, 100);
+
+    &:first-of-type {
+      border-right: 1px solid color(neutral, 100);
+    }
+
+    span {
+      font-weight: 600;
+
+      &:first-of-type {
+        text-transform: uppercase;
+        color: color(neutral, 300);
+        font-size: font-size(xxs);
+        padding-bottom: spacing(1);
+      }
+
+      &:last-of-type {
+        font-size: font-size(m);
+
+        &.is-positive {
+          color: color(success, 500);
+        }
+      }
+    }
+  }
+}
+
+.costcard__title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: font-size(s);
+}
+
+.costcard__label {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.costcard__body {
+  padding: spacing(4);
+}
+
+.costcard__form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.costcard__btn {
+  margin-top: spacing(2);
+}

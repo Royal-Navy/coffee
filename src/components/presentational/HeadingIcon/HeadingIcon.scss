@@ -1,0 +1,19 @@
+@import '@royalnavy/css-framework';
+
+.heading-icon {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: color(primary, 200);
+  margin-right: spacing(2);
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: color(primary, 500);
+  }
+}

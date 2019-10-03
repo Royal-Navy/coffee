@@ -1,6 +1,6 @@
 @import '@royalnavy/css-framework';
 
-.subscriber-list {
+.record-list {
   background-color: color(neutral, white);
   padding: spacing(4);
   border-radius: 4px;
@@ -10,12 +10,12 @@
   color: color(neutral, 400);
 }
 
-.subscriber-list__table {
+.record-list__table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.subscriber-list__row {
+.record-list__row {
   padding: spacing(2) 0;
   border-bottom: 1px dashed color(neutral, 100);
 
@@ -24,7 +24,7 @@
   }
 }
 
-.subscriber-list__name {
+.record-list__name {
   display: inline-flex;
   align-items: center;
 
@@ -33,7 +33,7 @@
   }
 }
 
-.subscriber-list__status {
+.record-list__status {
   display: flex;
   align-items: center;
   text-transform: uppercase;
