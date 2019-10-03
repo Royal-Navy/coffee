@@ -3,7 +3,7 @@ import React from 'react'
 import './Costs.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
-import { RecordList } from '../../components/presentational/RecordList'
+import { CostRecordList } from '../../components/presentational/CostRecordList'
 import { CostCard } from '../../components/presentational/CostCard'
 import { HeadingIcon } from '../../components/presentational/HeadingIcon'
 
@@ -35,7 +35,7 @@ export const Costs = props => {
       </section>
       <section style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ width: '100%', marginRight: '1rem' }}>
-          <RecordList />
+          <CostRecordList />
         </div>
         <div>
           <CostCard />

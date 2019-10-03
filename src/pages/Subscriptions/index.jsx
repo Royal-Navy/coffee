@@ -4,7 +4,7 @@ import { withRouter, Route, Switch } from 'react-router-dom'
 import './Subscriptions.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
-import { RecordList } from '../../components/presentational/RecordList'
+import { SubscriptionRecordList } from '../../components/presentational/SubscriptionRecordList'
 import { InfoCard } from '../../components/presentational/InfoCard'
 import { HeadingIcon } from '../../components/presentational/HeadingIcon'
 import { SubscribeModal } from '../../components/presentational/SubscribeModal'
@@ -45,7 +45,7 @@ export const Subscriptions = withRouter(props => {
       </section>
       <section style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ width: '100%', marginRight: '1rem' }}>
-          <RecordList />
+          <SubscriptionRecordList />
         </div>
         <div>
           <InfoCard id={id} />
