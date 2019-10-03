@@ -1,0 +1,36 @@
+@import '@royalnavy/css-framework';
+
+.payment-list {
+  margin: 0;
+  padding: spacing(4) spacing(4) 0;
+}
+
+.payment-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed color(neutral, 200);
+  padding: spacing(4) 0;
+  font-size: font-size(xs);
+  font-weight: 600;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  .rn-badge {
+    margin-left: spacing(2);
+  }
+
+  &.is-missed {
+    color: color(danger, 400);
+  }
+}
+
+.payment-list .payment-list__amount {
+  font-size: font-size(s);
+}
+
+.payment-list .payment-list__date {
+  color: color(neutral, 300);
+}
