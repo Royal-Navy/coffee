@@ -16,7 +16,7 @@ const defaultState = {
       subscription: {
         amount: 6,
         frequency: 'weekly',
-        paymentType: 'direct-debit',
+        paymentType: 'Direct Debit',
         startDate: Date.now(),
       },
       payments: [],

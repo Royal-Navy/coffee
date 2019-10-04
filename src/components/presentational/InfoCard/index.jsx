@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { initials, frequencLy } from '../../../helpers'
 
 import {
   Avatar,
@@ -20,17 +21,41 @@ import './InfoCard.scss'
 
 import { PaymentList } from '../PaymentList'
 
-export const InfoCard = withRouter(({ history, id }) => {
+export const InfoCard = withRouter(({ subscription, history }) => {
+  if (!subscription)
+    return (
+      <article className="infocard">
+        <div className="infocard__placeholder">
+          <p>Click on a subscription to view more details.</p>
+        </div>
+      </article>
+    )
+
+  const {
+    id,
+    active,
+    personal: { firstName, lastName, email, contactNumber, handle },
+    subscription: { amount, frequency, paymentType, startDate },
+  } = subscription
+
   return (
     <article className="infocard">
       <header className="infocard__header">
         <div>
-          <Avatar initials="TH" dark />
-          <span className="infocard__name">Tom Humphris</span>
+          <Avatar initials={initials(firstName, lastName)} dark />
+          <span className="infocard__name">
+            {firstName}&nbsp;{lastName}
+          </span>
         </div>
-        <Badge color="success" colorVariant="faded">
-          Active
-        </Badge>
+        {(active && (
+          <Badge color="success" colorVariant="faded">
+            Active
+          </Badge>
+        )) || (
+          <Badge color="danger" colorVariant="faded">
+            Paused
+          </Badge>
+        )}
       </header>
       <TabSet className="infocard__body">
         <Tab title="Subscriber Details">
@@ -41,19 +66,19 @@ export const InfoCard = withRouter(({ history, id }) => {
                 <li className="subscriber-details__list-item">
                   <span className="subscriber-details__email">
                     <IconEmail />
-                    charli.roberts@mod.gov.uk
+                    {email}
                   </span>
                 </li>
                 <li className="subscriber-details__list-item">
                   <span className="subscriber-details__phone">
                     <IconSmartphone />
-                    0778 0548 372
+                    {contactNumber}
                   </span>
                 </li>
                 <li className="subscriber-details__list-item">
                   <span className="subscriber-details__tweet">
                     <IconChat />
-                    @charli
+                    {handle}
                   </span>
                 </li>
               </ul>
@@ -70,7 +95,7 @@ export const InfoCard = withRouter(({ history, id }) => {
                 <div className="subscriber-details__amount">
                   <span>Subscription Amount</span>
                   <span>
-                    &pound;4 <span>/week</span>
+                    &pound;{amount} <span>/{frequencLy(frequency)}</span>
                   </span>
                 </div>
                 <div className="subscriber-details__outstanding">
@@ -79,8 +104,8 @@ export const InfoCard = withRouter(({ history, id }) => {
                 </div>
               </div>
               <p>
-                Charli's subscription is paid by <em>Direct Debit</em> every{' '}
-                <em>Week</em>.
+                {firstName}'s subscription is paid by <em>{paymentType}</em>{' '}
+                every <em>{frequencLy(frequency)}</em>.
               </p>
               <div className="infocard__buttons">
                 <Button variant="secondary">Pause</Button>

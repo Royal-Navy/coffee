@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { initials, frequencLy } from '../../../helpers'
 
 import { Avatar, Badge } from '@royalnavy/react-component-library'
 import { IconCheckCircle, IconWarning, IconChat } from '@royalnavy/icon-library'
@@ -10,10 +11,6 @@ export const SubscriptionRecordList = withRouter(
   ({ match, history, subscriptions }) => {
     function isActive(id) {
       return id === match.params.id
-    }
-
-    function initials(firstName, lastName) {
-      return firstName.charAt(0) + lastName.charAt(0)
     }
 
     return (
@@ -59,7 +56,7 @@ export const SubscriptionRecordList = withRouter(
                     </td>
                     <td>
                       <span className="record-list__cost">
-                        &pound;{amount} <span>/{frequency}</span>
+                        &pound;{amount} <span>/{frequencLy(frequency)}</span>
                       </span>
                     </td>
                     <td>
