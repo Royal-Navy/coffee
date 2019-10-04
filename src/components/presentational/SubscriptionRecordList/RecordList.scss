@@ -93,3 +93,10 @@
 .record-list__price {
   color: color(danger, 400);
 }
+
+.record-list--costs .record-list__row {
+  &:hover {
+    cursor: initial;
+    background-color: initial;
+  }
+}
