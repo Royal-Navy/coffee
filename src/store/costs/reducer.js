@@ -1,7 +1,14 @@
 import { ActionTypes } from './types'
 
 const defaultState = {
-  payments: [],
+  items: [
+    {
+      dateAdded: Date.now(),
+      purchase: 'Coffee',
+      price: 4.5,
+      notes: 'Increased number of meetings caused coffee usage to spike.',
+    },
+  ],
 }
 
 export function reducer(state = defaultState, action) {
