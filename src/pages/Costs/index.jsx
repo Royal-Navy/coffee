@@ -4,18 +4,12 @@ import './Costs.scss'
 
 import { DefaultLayout } from '../../layouts/Default'
 import CostRecordListContainer from '../../components/containers/CostRecordListContainer'
-import { CostCard } from '../../components/presentational/CostCard'
+import CostCardContainer from '../../components/containers/CostCardContainer'
 import { HeadingIcon } from '../../components/presentational/HeadingIcon'
 
 import { IconCreditCard } from '@royalnavy/icon-library'
 
-export const Costs = props => {
-  const {
-    match: {
-      params: { id },
-    },
-  } = props
-
+export const Costs = _ => {
   return (
     <DefaultLayout>
       <section
@@ -38,7 +32,7 @@ export const Costs = props => {
           <CostRecordListContainer />
         </div>
         <div>
-          <CostCard />
+          <CostCardContainer />
         </div>
       </section>
     </DefaultLayout>

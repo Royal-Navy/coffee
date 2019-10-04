@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatCurrency } from '../../../helpers'
 
 import { Badge, Button } from '@royalnavy/react-component-library'
 import { IconCreditCard } from '@royalnavy/icon-library'
@@ -7,7 +8,7 @@ import { HeadingIcon } from '../HeadingIcon'
 
 import './CostCard.scss'
 
-export const CostCard = props => {
+export const CostCard = ({ total, nextMonth }) => {
   return (
     <article className="costcard">
       <header className="costcard__header">
@@ -18,11 +19,11 @@ export const CostCard = props => {
         </span>
         <div>
           <span>Current Kitty</span>
-          <span>&pound;37.25</span>
+          <span>{formatCurrency(total)}</span>
         </div>
         <div>
           <span>Subs Next Month</span>
-          <span className="is-positive">+&pound;53.00</span>
+          <span className="is-positive">+{formatCurrency(nextMonth)}</span>
         </div>
       </header>
       <div className="costcard__body">

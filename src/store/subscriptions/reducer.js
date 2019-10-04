@@ -1,5 +1,6 @@
 import { ActionTypes } from './types'
 import uuid from 'uuid'
+import dayjs from 'dayjs'
 
 const defaultState = {
   items: [
@@ -17,22 +18,22 @@ const defaultState = {
         amount: 6,
         frequency: 'weekly',
         paymentType: 'Direct Debit',
-        startDate: Date.now(),
+        startDate: dayjs(),
       },
       payments: [
         {
           amount: 4,
-          date: Date.now(),
+          date: dayjs(),
           settled: true,
         },
         {
           amount: 6,
-          date: Date.now(),
+          date: dayjs().add(1, 'month'),
           settled: true,
         },
         {
           amount: 4,
-          date: Date.now(),
+          date: dayjs().add(1, 'month'),
           settled: false,
         },
       ],
