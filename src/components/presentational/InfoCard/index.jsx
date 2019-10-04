@@ -36,6 +36,7 @@ export const InfoCard = withRouter(({ subscription, history }) => {
     active,
     personal: { firstName, lastName, email, contactNumber, handle },
     subscription: { amount, frequency, paymentType, startDate },
+    payments,
   } = subscription
 
   return (
@@ -121,7 +122,7 @@ export const InfoCard = withRouter(({ subscription, history }) => {
         </Tab>
         <Tab title="Payment History">
           <section>
-            <PaymentList />
+            <PaymentList payments={payments} />
           </section>
         </Tab>
       </TabSet>

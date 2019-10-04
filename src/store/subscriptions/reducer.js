@@ -19,7 +19,23 @@ const defaultState = {
         paymentType: 'Direct Debit',
         startDate: Date.now(),
       },
-      payments: [],
+      payments: [
+        {
+          amount: 4,
+          date: Date.now(),
+          settled: true,
+        },
+        {
+          amount: 6,
+          date: Date.now(),
+          settled: true,
+        },
+        {
+          amount: 4,
+          date: Date.now(),
+          settled: false,
+        },
+      ],
     },
   ],
 }
