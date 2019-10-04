@@ -51,8 +51,6 @@ export function reducer(state = defaultState, action) {
         items: state.items.filter(item => item !== action.payload),
       }
     case ActionTypes.TOGGLE_ACTIVE:
-      console.log(action.payload)
-
       return {
         ...state,
         items: state.items.map(item =>
