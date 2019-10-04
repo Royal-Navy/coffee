@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { ActionTypes } from '../../../store/subscriptions'
 
 import { InfoCard } from '../../presentational/InfoCard'
 
-const InfoCardContainer = ({ subscription }) => {
-  return <InfoCard subscription={subscription} />
+const InfoCardContainer = ({ subscription, toggleActive }) => {
+  return <InfoCard subscription={subscription} handleToggle={toggleActive} />
 }
 
 const mapStateToProps = ({ subscriptions }, { id }) => {
@@ -13,4 +14,14 @@ const mapStateToProps = ({ subscriptions }, { id }) => {
   }
 }
 
-export default connect(mapStateToProps)(InfoCardContainer)
+const mapDispatchToProps = (dispatch, { id }) => {
+  return {
+    toggleActive: () =>
+      dispatch({ type: ActionTypes.TOGGLE_ACTIVE, payload: id }),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(InfoCardContainer)

@@ -8,8 +8,6 @@ import './PaymentList.scss'
 import { ObjectUnsubscribedError } from 'rxjs'
 
 export const PaymentList = ({ payments }) => {
-  console.log(payments)
-
   return (
     <ol className="payment-list">
       {payments &&
