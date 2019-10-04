@@ -1,7 +1,27 @@
 import { ActionTypes } from './types'
+import uuid from 'uuid'
 
 const defaultState = {
-  subscribers: [],
+  items: [
+    {
+      id: uuid(),
+      active: true,
+      personal: {
+        firstName: 'Tom',
+        lastName: 'Humphris',
+        email: 'tom.humphris@royalnavy.io',
+        contactNumber: '07515356069',
+        slackUsername: '@Tom Humphris',
+      },
+      subscription: {
+        amount: 4,
+        frequency: 'weekly',
+        paymentType: 'direct-debit',
+        startDate: Date.now(),
+      },
+      payments: [],
+    },
+  ],
 }
 
 export function reducer(state = defaultState, action) {
