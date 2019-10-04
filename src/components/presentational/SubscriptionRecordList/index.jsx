@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { initials, frequencLy } from '../../../helpers'
+import uuid from 'uuid'
 
 import { Avatar, Badge } from '@royalnavy/react-component-library'
 import { IconCheckCircle, IconWarning, IconChat } from '@royalnavy/icon-library'
@@ -28,6 +29,7 @@ export const SubscriptionRecordList = withRouter(
                       isActive(id) ? 'is-active' : ''
                     }`}
                     onClick={_ => history.push(`/subscriptions/${id}`)}
+                    key={uuid()}
                   >
                     <td>
                       <div className="record-list__name">

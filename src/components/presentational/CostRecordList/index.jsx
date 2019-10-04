@@ -1,6 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { formatCurrency } from '../../../helpers'
+import uuid from 'uuid'
 
 import { Button } from '@royalnavy/react-component-library'
 
@@ -15,7 +16,7 @@ export const CostRecordList = ({ costs }) => {
           <tbody>
             {costs.map(({ dateAdded, purchase, price, notes }) => {
               return (
-                <tr className="record-list__row">
+                <tr className="record-list__row" key={uuid()}>
                   <td>
                     <div className="record-list__date">
                       <span>{dayjs(dateAdded).format('DD/MM/YYYY')}</span>

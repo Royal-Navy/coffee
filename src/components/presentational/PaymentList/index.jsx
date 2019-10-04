@@ -1,9 +1,11 @@
 import React from 'react'
 import dayjs from 'dayjs'
+import uuid from 'uuid'
 
 import { Badge } from '@royalnavy/react-component-library'
 
 import './PaymentList.scss'
+import { ObjectUnsubscribedError } from 'rxjs'
 
 export const PaymentList = ({ payments }) => {
   console.log(payments)
@@ -16,6 +18,7 @@ export const PaymentList = ({ payments }) => {
 
           return (
             <li
+              key={uuid()}
               className={`payment-list__item ${
                 settled ? 'is-settled' : 'is-missed'
               }`}
