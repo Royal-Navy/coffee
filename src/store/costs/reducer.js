@@ -10,6 +10,20 @@ const defaultState = {
       price: 4.5,
       notes: 'Increased number of meetings caused coffee usage to spike.',
     },
+    {
+      id: uuid(),
+      dateAdded: Date.now(),
+      purchase: 'Coffee',
+      price: 4.5,
+      notes: 'Increased number of meetings caused coffee usage to spike.',
+    },
+    {
+      id: uuid(),
+      dateAdded: Date.now(),
+      purchase: 'Coffee',
+      price: 4.5,
+      notes: 'Increased number of meetings caused coffee usage to spike.',
+    },
   ],
 }
 
