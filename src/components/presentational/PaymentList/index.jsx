@@ -5,7 +5,6 @@ import uuid from 'uuid'
 import { Badge } from '@royalnavy/react-component-library'
 
 import './PaymentList.scss'
-import { ObjectUnsubscribedError } from 'rxjs'
 
 export const PaymentList = ({ payments }) => {
   return (
