@@ -11,10 +11,10 @@ const defaultState = {
         lastName: 'Humphris',
         email: 'tom.humphris@royalnavy.io',
         contactNumber: '07515356069',
-        slackUsername: '@Tom Humphris',
+        handle: '@Tom Humphris',
       },
       subscription: {
-        amount: 4,
+        amount: 6,
         frequency: 'weekly',
         paymentType: 'direct-debit',
         startDate: Date.now(),

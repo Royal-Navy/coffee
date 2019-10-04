@@ -12,37 +12,54 @@ export const SubscriptionRecordList = withRouter(
       return id === match.params.id
     }
 
+    function initials(firstName, lastName) {
+      return firstName.charAt(0) + lastName.charAt(0)
+    }
+
     return (
       <section className="record-list record-list--subscription">
         {(subscriptions && (
           <table className="record-list__table">
             <tbody>
-              {subscriptions.map(({ id }) => {
+              {subscriptions.map(({ id, active, personal, subscription }) => {
+                const { firstName, lastName, handle } = personal
+                const { amount, frequency } = subscription
+
                 return (
                   <tr
-                    className={`record-list__row ${isActive(id)}`}
+                    className={`record-list__row ${
+                      isActive(id) ? 'is-active' : ''
+                    }`}
                     onClick={_ => history.push(`/subscriptions/${id}`)}
                   >
                     <td>
                       <div className="record-list__name">
-                        <Avatar initials="AR" dark />
-                        <span>Adam Rooney</span>
+                        <Avatar initials={initials(firstName, lastName)} dark />
+                        <span>
+                          {firstName}&nbsp;{lastName}
+                        </span>
                       </div>
                     </td>
                     <td>
-                      <Badge color="danger" colorVariant="faded">
-                        Paused
-                      </Badge>
+                      {(active && (
+                        <Badge color="success" colorVariant="faded">
+                          Active
+                        </Badge>
+                      )) || (
+                        <Badge color="danger" colorVariant="faded">
+                          Paused
+                        </Badge>
+                      )}
                     </td>
                     <td>
                       <span className="record-list__tweet">
                         <IconChat />
-                        @adam
+                        {handle}
                       </span>
                     </td>
                     <td>
                       <span className="record-list__cost">
-                        &pound;4 <span>/month</span>
+                        &pound;{amount} <span>/{frequency}</span>
                       </span>
                     </td>
                     <td>
