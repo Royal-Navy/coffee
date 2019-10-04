@@ -28,7 +28,7 @@ export const CostRecordList = ({ costs }) => {
                   </td>
                   <td>
                     <div className="record-list__price">
-                      <span>{formatCurrency(price)}</span>
+                      <span>-&nbsp;{formatCurrency(price)}</span>
                     </div>
                   </td>
                   <td>
