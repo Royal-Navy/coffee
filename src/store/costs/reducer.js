@@ -1,8 +1,10 @@
 import { ActionTypes } from './types'
+import uuid from 'uuid'
 
 const defaultState = {
   items: [
     {
+      id: uuid(),
       dateAdded: Date.now(),
       purchase: 'Coffee',
       price: 4.5,
@@ -14,16 +16,12 @@ const defaultState = {
 export function reducer(state = defaultState, action) {
   switch (action.type) {
     case ActionTypes.CREATE_COST:
-      return Object.assign({}, state, {
-        ...action.payload,
-        /* ... */
-        created: Date.now(),
-        lastUpdated: Date.now(),
-      })
+    // ...
     case ActionTypes.DELETE_COST:
-      return Object.assign({}, state, {
-        subscribers: state.payments.filter(item => item !== action.payload),
-      })
+      return {
+        ...state,
+        items: state.items.filter(item => item !== action.payload),
+      }
     default:
       return state
   }

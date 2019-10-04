@@ -43,16 +43,19 @@ const defaultState = {
 export function reducer(state = defaultState, action) {
   switch (action.type) {
     case ActionTypes.CREATE_SUBSCRIBER:
-      return Object.assign({}, state, {
-        ...action.payload,
-        /* ... */
-        created: Date.now(),
-        lastUpdated: Date.now(),
-      })
+    // ...
     case ActionTypes.DELETE_SUBSCRIBER:
-      return Object.assign({}, state, {
-        subscribers: state.subscribers.filter(item => item !== action.payload),
-      })
+      return {
+        ...state,
+        items: state.items.filter(item => item !== action.payload),
+      }
+    case ActionTypes.TOGGLE_ACTIVE:
+      return {
+        ...state,
+        items: state.items.map(item =>
+          item.id === action.payload ? { ...item, active: !item.active } : item
+        ),
+      }
     default:
       return state
   }
