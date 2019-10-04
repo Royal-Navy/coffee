@@ -8,7 +8,7 @@ import { ReactComponent as AppLogo } from './logo.svg'
 
 export const DefaultLayout = withRouter(({ children, location }) => {
   function isActive(path) {
-    return path === location.pathname
+    return location.pathname.includes(path)
   }
 
   return (
