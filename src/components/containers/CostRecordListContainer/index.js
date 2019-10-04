@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { ActionTypes } from '../../../store/costs'
 
 import { CostRecordList } from '../../presentational/CostRecordList'
 
-const CostRecordListContainer = ({ costs }) => {
-  return <CostRecordList costs={costs} />
+const CostRecordListContainer = ({ costs, deleteCost }) => {
+  return <CostRecordList costs={costs} handleDelete={deleteCost} />
 }
 
 const mapStateToProps = ({ costs }) => {
@@ -13,4 +14,13 @@ const mapStateToProps = ({ costs }) => {
   }
 }
 
-export default connect(mapStateToProps)(CostRecordListContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteCost: id => dispatch({ type: ActionTypes.DELETE_COST, payload: id }),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CostRecordListContainer)

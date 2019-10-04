@@ -8,13 +8,13 @@ import { Button } from '@royalnavy/react-component-library'
 // TODO: Remove dependency on other components styles
 import '../SubscriptionRecordList/RecordList.scss'
 
-export const CostRecordList = ({ costs }) => {
+export const CostRecordList = ({ costs, handleDelete }) => {
   return (
     <section className="record-list record-list--costs">
       {(costs && (
         <table className="record-list__table">
           <tbody>
-            {costs.map(({ dateAdded, purchase, price, notes }) => {
+            {costs.map(({ id, dateAdded, purchase, price, notes }) => {
               return (
                 <tr className="record-list__row" key={uuid()}>
                   <td>
@@ -40,7 +40,9 @@ export const CostRecordList = ({ costs }) => {
                   <td>
                     <div className="record-list__btn-delete">
                       <Button
-                        onClick={() => {}}
+                        onClick={() => {
+                          handleDelete(id)
+                        }}
                         variant="primary"
                         color="danger"
                         size="small"
