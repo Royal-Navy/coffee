@@ -84,7 +84,7 @@ export function reducer(state = defaultState, action) {
     case ActionTypes.CREATE_SUBSCRIBER:
       return {
         ...state,
-        items: [...state.items, ...subscription(null, action.payload)],
+        items: [...state.items, ...[subscription(null, action.payload)]],
       }
     case ActionTypes.DELETE_SUBSCRIBER:
       return {
