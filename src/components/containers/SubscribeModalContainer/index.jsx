@@ -11,9 +11,10 @@ const SubscribeModalContainer = withRouter(
     deleteSubscriber,
     createSubscriber,
     updateSubscriber,
-    match: { params },
+    match: {
+      params: { id },
+    },
   }) => {
-    const { id } = params
     let initialValues = {}
 
     if (subscription) {
@@ -35,17 +36,27 @@ const SubscribeModalContainer = withRouter(
   }
 )
 
-const mapStateToProps = ({ subscriptions }, { match: { params } }) => {
-  const { id } = params
-
+const mapStateToProps = (
+  { subscriptions },
+  {
+    match: {
+      params: { id },
+    },
+  }
+) => {
   return {
     subscription: subscriptions.items.find(item => item.id === id) || null,
   }
 }
 
-const mapDispatchToProps = (dispatch, { match: { params } }) => {
-  const { id } = params
-
+const mapDispatchToProps = (
+  dispatch,
+  {
+    match: {
+      params: { id },
+    },
+  }
+) => {
   return {
     deleteSubscriber: () => {
       dispatch({ type: ActionTypes.DELETE_SUBSCRIBER, payload: id })

@@ -110,12 +110,7 @@ export const InfoCard = withRouter(
                   every <em>{frequencLy(frequency)}</em>.
                 </p>
                 <div className="infocard__buttons">
-                  <Button
-                    variant="secondary"
-                    onClick={_ => {
-                      handleToggle()
-                    }}
-                  >
+                  <Button variant="secondary" onClick={_ => handleToggle()}>
                     {active ? 'Pause' : 'Resume'}
                   </Button>
                   <Button

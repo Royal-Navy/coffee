@@ -16,10 +16,10 @@ import { IconPerson } from '@royalnavy/icon-library'
 
 export const Subscriptions = withRouter(props => {
   const {
+    history,
     match: {
       params: { id },
     },
-    history,
   } = props
 
   return (

@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { ActionTypes } from '../../../store/subscriptions'
 
 import { InfoCard } from '../../presentational/InfoCard'
 
-const InfoCardContainer = ({ subscription, toggleActive }) => {
+const InfoCardContainer = withRouter(({ subscription, toggleActive }) => {
   return <InfoCard subscription={subscription} handleToggle={toggleActive} />
-}
+})
 
 const mapStateToProps = ({ subscriptions }, { id }) => {
   return {
