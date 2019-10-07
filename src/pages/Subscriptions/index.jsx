@@ -7,9 +7,9 @@ import { DefaultLayout } from '../../layouts/Default'
 
 import SubscriptionRecordListContainer from '../../components/containers/SubscriptionRecordListContainer'
 import InfoCardContainer from '../../components/containers/InfoCardContainer'
+import SubscribeModalContainer from '../../components/containers/SubscribeModalContainer'
 
 import { HeadingIcon } from '../../components/presentational/HeadingIcon'
-import { SubscribeModal } from '../../components/presentational/SubscribeModal'
 
 import { Button } from '@royalnavy/react-component-library'
 import { IconPerson } from '@royalnavy/icon-library'
@@ -55,11 +55,15 @@ export const Subscriptions = withRouter(props => {
       </section>
 
       <Switch>
-        <Route exact path="/subscriptions/create" component={SubscribeModal} />
+        <Route
+          exact
+          path="/subscriptions/create"
+          component={SubscribeModalContainer}
+        />
         <Route
           exact
           path="/subscriptions/update/:id"
-          component={SubscribeModal}
+          component={SubscribeModalContainer}
         />
       </Switch>
     </DefaultLayout>
