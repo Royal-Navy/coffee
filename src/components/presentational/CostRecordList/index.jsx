@@ -11,7 +11,7 @@ import '../SubscriptionRecordList/RecordList.scss'
 export const CostRecordList = ({ costs, handleDelete }) => {
   return (
     <section className="record-list record-list--costs">
-      {(costs && (
+      {(costs && costs.length > 0 && (
         <table className="record-list__table">
           <tbody>
             {costs.map(({ id, dateAdded, purchase, price, notes }) => {

@@ -16,7 +16,7 @@ export const SubscriptionRecordList = withRouter(
 
     return (
       <section className="record-list record-list--subscription">
-        {(subscriptions && (
+        {(subscriptions && subscriptions.length > 0 && (
           <table className="record-list__table">
             <tbody>
               {subscriptions.map(({ id, active, personal, subscription }) => {
