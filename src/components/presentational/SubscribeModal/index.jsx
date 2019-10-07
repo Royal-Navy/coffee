@@ -20,7 +20,6 @@ export const SubscribeModal = withRouter(
     handleCreate,
     handleUpdate,
   }) => {
-    const bla = initialValues
     const [formValues, setFormValues] = useState(initialValues)
 
     const primaryButton = {
