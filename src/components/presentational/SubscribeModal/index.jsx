@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { Field, Formik, Form } from 'formik'
@@ -12,10 +12,23 @@ import { IconPerson, IconCreditCard } from '@royalnavy/icon-library'
 import './SubscribeModal.scss'
 
 export const SubscribeModal = withRouter(
-  ({ history, id, handleDelete, handleCreate, handleUpdate }) => {
+  ({
+    history,
+    id,
+    initialValues,
+    handleDelete,
+    handleCreate,
+    handleUpdate,
+  }) => {
+    const bla = initialValues
+    const [formValues, setFormValues] = useState(initialValues)
+
     const primaryButton = {
-      onClick: _ => (id ? handleUpdate() : handleCreate()),
-      children: 'Add Subscriber',
+      onClick: _ => {
+        id ? handleUpdate(formValues) : handleCreate(formValues)
+        history.push(`/subscriptions/${id}`)
+      },
+      children: `${id ? 'Update' : 'Add'} Subscriber`,
     }
 
     const secondaryButton = {
@@ -27,6 +40,7 @@ export const SubscribeModal = withRouter(
       ? {
           onClick: _ => {
             handleDelete()
+            history.push('/subscriptions')
           },
           children: 'Delete Subscriber',
           variant: 'tertiary',
@@ -47,8 +61,6 @@ export const SubscribeModal = withRouter(
       { label: 'Direct Debit', value: 'Direct Debit' },
       { label: 'Cash', value: 'Cash' },
     ]
-
-    const initialValues = {}
 
     return (
       <Modal
@@ -78,6 +90,19 @@ export const SubscribeModal = withRouter(
           <Formik
             initialValues={initialValues}
             render={({ setFieldValue }) => {
+              const onChange = e => {
+                const {
+                  target: { name, value },
+                } = e
+
+                setFieldValue(name, value)
+
+                setFormValues({
+                  ...formValues,
+                  [name]: value,
+                })
+              }
+
               return (
                 <Form
                   style={{ display: 'flex' }}
@@ -90,6 +115,7 @@ export const SubscribeModal = withRouter(
                           component={TextInput}
                           name="firstName"
                           label="First Name"
+                          onChange={onChange}
                         />
                       </div>
                       <div style={{ paddingLeft: '.5rem' }}>
@@ -98,6 +124,7 @@ export const SubscribeModal = withRouter(
                           component={TextInput}
                           name="lastName"
                           label="Last Name"
+                          onChange={onChange}
                         />
                       </div>
                     </div>
@@ -106,8 +133,9 @@ export const SubscribeModal = withRouter(
                       <div>
                         <Field
                           component={TextInput}
-                          name="contactName"
+                          name="contactNumber"
                           label="Contact Number"
+                          onChange={onChange}
                         />
                       </div>
                       <div style={{ paddingLeft: '.5rem' }}>
@@ -115,6 +143,7 @@ export const SubscribeModal = withRouter(
                           component={TextInput}
                           name="handle"
                           label="Slack Username"
+                          onChange={onChange}
                         />
                       </div>
                     </div>
@@ -133,14 +162,13 @@ export const SubscribeModal = withRouter(
                       max={10}
                       name="amount"
                       label="Subscription"
+                      onChange={onChange}
                     />
                     <Field
                       name="frequency"
                       component={Switch}
                       options={frequencyOptions}
-                      onChange={event => {
-                        setFieldValue('frequency', event.target.value)
-                      }}
+                      onChange={onChange}
                     />
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                       <div>
@@ -149,6 +177,7 @@ export const SubscribeModal = withRouter(
                           options={paymentTypeOptions}
                           name="paymentType"
                           label="Payment Type"
+                          onChange={onChange}
                         />
                       </div>
                       <div style={{ paddingLeft: '.5rem' }}>
@@ -156,6 +185,7 @@ export const SubscribeModal = withRouter(
                           component={TextInput}
                           name="startDate"
                           label="Start Date"
+                          onChange={onChange}
                         />
                       </div>
                     </div>

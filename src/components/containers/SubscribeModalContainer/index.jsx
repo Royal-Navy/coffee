@@ -14,10 +14,18 @@ const SubscribeModalContainer = withRouter(
     match: { params },
   }) => {
     const { id } = params
+    let initialValues = {}
+
+    if (subscription) {
+      initialValues = {
+        ...subscription.personal,
+        ...subscription.subscription,
+      }
+    }
 
     return (
       <SubscribeModal
-        subscription={subscription}
+        initialValues={initialValues}
         handleDelete={deleteSubscriber}
         handleCreate={createSubscriber}
         handleUpdate={updateSubscriber}

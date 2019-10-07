@@ -18,7 +18,7 @@ const defaultState = {
         amount: 6,
         frequency: 'weekly',
         paymentType: 'Direct Debit',
-        startDate: dayjs(),
+        startDate: dayjs().format('DD/MM/YYYY'),
       },
       payments: [
         {
@@ -28,12 +28,16 @@ const defaultState = {
         },
         {
           amount: 6,
-          date: dayjs().add(1, 'month'),
+          date: dayjs()
+            .add(1, 'month')
+            .format('DD/MM/YYYY'),
           settled: true,
         },
         {
           amount: 4,
-          date: dayjs().add(1, 'month'),
+          date: dayjs()
+            .add(1, 'month')
+            .format('DD/MM/YYYY'),
           settled: false,
         },
       ],
