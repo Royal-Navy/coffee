@@ -38,3 +38,27 @@ a:hover {
 .rn-btn.rn-btn--tertiary {
   color: color(danger, 400) !important;
 }
+
+.rn-switch__option::before {
+  white-space: nowrap;
+  padding: spacing(3) !important;
+}
+
+.rn-switch__container {
+  align-items: stretch;
+
+  .rn-switch__option {
+    flex: 1;
+
+    &::before {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.rn-modal__main {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}

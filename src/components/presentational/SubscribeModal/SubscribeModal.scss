@@ -30,5 +30,11 @@
 }
 
 .subscribe-modal__body {
-  //
+  padding: spacing(2) spacing(4);
+}
+
+.subscribe-modal__form {
+  .rn-select {
+    width: 10rem;
+  }
 }
