@@ -128,7 +128,12 @@ export const SubscribeModal = withRouter(
                         />
                       </div>
                     </div>
-                    <Field component={TextInput} name="email" label="Email" />
+                    <Field
+                      component={TextInput}
+                      name="email"
+                      label="Email"
+                      onChange={onChange}
+                    />
                     <div style={{ display: 'flex' }}>
                       <div>
                         <Field
