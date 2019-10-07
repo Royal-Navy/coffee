@@ -2,47 +2,16 @@ import { ActionTypes } from './types'
 import uuid from 'uuid'
 import dayjs from 'dayjs'
 
-const defaultState = {
-  items: [
-    {
-      id: uuid(),
-      active: false,
-      personal: {
-        firstName: 'Charli',
-        lastName: 'Roberts',
-        email: 'charli.roberts@mod.gov.uk',
-        contactNumber: '0778 9548 372',
-        handle: '@charli',
-      },
-      subscription: {
-        amount: 6,
-        frequency: 'weekly',
-        paymentType: 'Direct Debit',
-        startDate: dayjs().format('DD/MM/YYYY'),
-      },
-      payments: [
-        {
-          amount: 4,
-          date: dayjs(),
-          settled: true,
-        },
-        {
-          amount: 6,
-          date: dayjs()
-            .add(1, 'month')
-            .format('DD/MM/YYYY'),
-          settled: true,
-        },
-        {
-          amount: 4,
-          date: dayjs()
-            .add(1, 'month')
-            .format('DD/MM/YYYY'),
-          settled: false,
-        },
-      ],
-    },
-  ],
+const firstNames = ['Tom', 'Kate', 'Mark', 'Billy', 'Steve', 'Michelle']
+
+const payments = () => {
+  return Array(5)
+    .fill()
+    .map(_ => ({
+      amount: Math.round(Math.random() * 10),
+      date: dayjs(),
+      settled: Math.random() >= 0.5,
+    }))
 }
 
 function subscription(
@@ -75,8 +44,26 @@ function subscription(
       paymentType,
       startDate,
     },
-    payments: [],
+    payments: payments(),
   }
+}
+
+const defaultState = {
+  items: Array(5)
+    .fill()
+    .map(_ =>
+      subscription(null, {
+        firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
+        lastName: 'Bloggs',
+        email: 'charli.roberts@mod.gov.uk',
+        contactNumber: '0778 9548 372',
+        handle: '@charli',
+        amount: Math.round(Math.random() * 10),
+        frequency: 'weekly',
+        paymentType: 'Direct Debit',
+        startDate: dayjs().format('DD/MM/YYYY'),
+      })
+    ),
 }
 
 export function reducer(state = defaultState, action) {
