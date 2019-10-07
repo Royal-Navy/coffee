@@ -34,7 +34,7 @@ export function reducer(state = defaultState, action) {
     case ActionTypes.DELETE_COST:
       return {
         ...state,
-        items: state.items.filter(item => item !== action.payload),
+        items: state.items.filter(item => item.id !== action.payload),
       }
     default:
       return state
