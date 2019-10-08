@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 const firstNames = ['Tom', 'Kate', 'Mark', 'Billy', 'Steve', 'Michelle']
 
 const payments = () => {
-  return Array(5)
+  return Array(4)
     .fill()
     .map(_ => ({
       amount: Math.round(Math.random() * 10),
@@ -49,7 +49,7 @@ function subscription(
 }
 
 const defaultState = {
-  items: Array(5)
+  items: Array(2)
     .fill()
     .map(_ =>
       subscription(null, {
