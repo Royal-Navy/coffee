@@ -1,14 +1,27 @@
 import React from 'react'
+import { Field, Formik, Form } from 'formik'
 import { formatCurrency } from '../../../helpers'
 
-import { Badge, Button } from '@royalnavy/react-component-library'
+import {
+  Badge,
+  Button,
+  Formik as FormikComponents,
+} from '@royalnavy/react-component-library'
+
 import { IconCreditCard } from '@royalnavy/icon-library'
 
 import { HeadingIcon } from '../HeadingIcon'
 
 import './CostCard.scss'
 
-export const CostCard = ({ total, nextMonth }) => {
+export const CostCard = ({ total, nextMonth, handleCreate }) => {
+  const { TextInput, Select } = FormikComponents
+
+  const purchaseOptions = [
+    { label: 'Coffee', value: 'Coffee' },
+    { label: 'Biscuits', value: 'Biscuits' },
+  ]
+
   return (
     <article className="costcard">
       <header className="costcard__header">
@@ -33,11 +46,33 @@ export const CostCard = ({ total, nextMonth }) => {
           </HeadingIcon>
           Add Costs
         </span>
-        <form className="costcard__form">
-          <Button variant="primary" className="costcard__btn">
-            Add Cost
-          </Button>
-        </form>
+        <Formik onSubmit={handleCreate}>
+          <Form className="costcard__form">
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div>
+                <Field
+                  component={Select}
+                  name="purchase"
+                  label="Purchase"
+                  options={purchaseOptions}
+                />
+              </div>
+              <div style={{ paddingLeft: '.5rem' }}>
+                <Field
+                  style={{ paddingLeft: '.5rem' }}
+                  component={TextInput}
+                  name="price"
+                  label="Price"
+                />
+              </div>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Button type="submit" variant="primary" className="costcard__btn">
+                Add Cost
+              </Button>
+            </div>
+          </Form>
+        </Formik>
       </div>
     </article>
   )

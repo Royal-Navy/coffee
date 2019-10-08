@@ -2,10 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import dayjs from 'dayjs'
 
+import { ActionTypes } from '../../../store/costs'
+
 import { CostCard } from '../../presentational/CostCard'
 
-const CostCardContainer = ({ total, nextMonth }) => {
-  return <CostCard total={total} nextMonth={nextMonth} />
+const CostCardContainer = ({ total, nextMonth, handleCreate }) => {
+  return (
+    <CostCard total={total} nextMonth={nextMonth} handleCreate={handleCreate} />
+  )
 }
 
 const total = costs => {
@@ -47,4 +51,15 @@ const mapStateToProps = ({ costs, subscriptions }) => {
   }
 }
 
-export default connect(mapStateToProps)(CostCardContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    handleCreate: payload => {
+      dispatch({ type: ActionTypes.CREATE_COST, payload: payload })
+    },
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CostCardContainer)

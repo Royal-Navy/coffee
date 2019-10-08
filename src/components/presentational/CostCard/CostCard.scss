@@ -65,11 +65,12 @@
   padding: spacing(4);
 }
 
-.costcard__form {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .costcard__btn {
   margin-top: spacing(2);
+}
+
+.costcard__form {
+  .rn-select {
+    width: 10rem;
+  }
 }

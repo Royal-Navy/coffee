@@ -1,36 +1,36 @@
 import { ActionTypes } from './types'
+import dayjs from 'dayjs'
 import uuid from 'uuid'
 
 const defaultState = {
-  items: [
-    {
-      id: uuid(),
-      dateAdded: Date.now(),
-      purchase: 'Coffee',
-      price: 4.5,
-      notes: 'Increased number of meetings caused coffee usage to spike.',
-    },
-    {
-      id: uuid(),
-      dateAdded: Date.now(),
-      purchase: 'Coffee',
-      price: 4.5,
-      notes: 'Increased number of meetings caused coffee usage to spike.',
-    },
-    {
-      id: uuid(),
-      dateAdded: Date.now(),
-      purchase: 'Coffee',
-      price: 4.5,
-      notes: 'Increased number of meetings caused coffee usage to spike.',
-    },
-  ],
+  items: Array(3)
+    .fill()
+    .map(_ =>
+      cost({
+        purchase: 'Coffee',
+        price: Math.round(Math.random() * 10),
+        notes: 'Increased number of meetings caused coffee usage to spike.',
+      })
+    ),
+}
+
+function cost({ purchase, price, notes }) {
+  return {
+    id: uuid(),
+    dateAdded: dayjs().format('DD/MM/YYYY'),
+    purchase,
+    price,
+    notes,
+  }
 }
 
 export function reducer(state = defaultState, action) {
   switch (action.type) {
     case ActionTypes.CREATE_COST:
-    // ...
+      return {
+        ...state,
+        items: [...state.items, ...[cost(action.payload)]],
+      }
     case ActionTypes.DELETE_COST:
       return {
         ...state,
