@@ -6,6 +6,7 @@
     "@royalnavy/css-framework": "^1.4.0",
     "@royalnavy/icon-library": "^1.4.0",
     "@royalnavy/react-component-library": "^1.4.0",
+    "bowser": "^2.7.0",
     "dayjs": "^1.8.16",
     "formik": "^1.5.8",
     "node-sass": "^4.12.0",

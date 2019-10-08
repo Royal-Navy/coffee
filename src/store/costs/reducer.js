@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import uuid from 'uuid'
 
 const defaultState = {
-  items: Array(3)
+  items: Array(2)
     .fill()
     .map(_ =>
       cost({

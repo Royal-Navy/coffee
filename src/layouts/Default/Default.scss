@@ -2,6 +2,7 @@
 
 body {
   color: color(neutral, 500);
+  background-color: color(neutral, 000);
 }
 
 a:hover {
@@ -18,6 +19,14 @@ a:hover {
   overflow: hidden;
 }
 
+.layout__debug {
+  position: fixed;
+  bottom: .5rem;
+  left: 1rem;
+  background: color(neutral, 100);
+  padding: spacing(4);
+}
+
 .page__heading {
   display: flex;
   align-items: center;
@@ -26,6 +35,10 @@ a:hover {
 }
 
 /* Fixing issues with @royalnavy component styles */
+
+.rn-masthead__main {
+  background-color: color(neutral, white);
+}
 
 .rn-badge.rn-badge--danger {
   color: color(danger, 400) !important;

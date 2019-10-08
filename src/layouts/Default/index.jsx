@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import Bowser from 'bowser'
 
 import './Default.scss'
 
@@ -10,6 +11,8 @@ export const DefaultLayout = withRouter(({ children, location }) => {
   function isActive(path) {
     return location.pathname.includes(path)
   }
+
+  const browserInfo = Bowser.parse(window.navigator.userAgent)
 
   return (
     <>
@@ -32,6 +35,9 @@ export const DefaultLayout = withRouter(({ children, location }) => {
         Logo={AppLogo}
       />
       <main className="layout__main">{children}</main>
+      <pre className="layout__debug">
+        {JSON.stringify(browserInfo, null, 2)}
+      </pre>
     </>
   )
 })
