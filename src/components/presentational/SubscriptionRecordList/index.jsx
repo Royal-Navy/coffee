@@ -4,7 +4,7 @@ import { initials, frequencLy } from '../../../helpers'
 import uuid from 'uuid'
 
 import { Avatar, Badge } from '@royalnavy/react-component-library'
-import { IconCheckCircle, IconWarning, IconChat } from '@royalnavy/icon-library'
+import { IconCheckCircle, IconChat } from '@royalnavy/icon-library'
 
 import './RecordList.scss'
 

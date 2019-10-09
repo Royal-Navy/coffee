@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { initials, frequencLy } from '../../../helpers'
+import { formatCurrency } from '../../../helpers'
 
 import {
   Avatar,
@@ -36,7 +37,7 @@ export const InfoCard = withRouter(
       id,
       active,
       personal: { firstName, lastName, email, contactNumber, handle },
-      subscription: { amount, frequency, paymentType, startDate },
+      subscription: { amount, frequency, paymentType },
       payments,
     } = subscription
 
@@ -97,7 +98,8 @@ export const InfoCard = withRouter(
                   <div className="subscriber-details__amount">
                     <span>Subscription Amount</span>
                     <span>
-                      &pound;{amount} <span>/{frequencLy(frequency)}</span>
+                      {formatCurrency(amount)}{' '}
+                      <span>/{frequencLy(frequency)}</span>
                     </span>
                   </div>
                   <div className="subscriber-details__outstanding">
