@@ -1,0 +1,77 @@
+@import '@royalnavy/css-framework';
+
+body {
+  color: color(neutral, 500);
+  background-color: color(neutral, 000);
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.rn-masthead__service-name svg {
+  width: 10rem;
+}
+
+.layout__main {
+  background-color: color(neutral, 000);
+  padding: spacing(2) spacing(8) spacing(6);
+  overflow: hidden;
+}
+
+.layout__debug {
+  position: fixed;
+  bottom: .5rem;
+  left: 1rem;
+  background: color(neutral, 100);
+  padding: spacing(4);
+}
+
+.page__heading {
+  display: flex;
+  align-items: center;
+  font-size: font-size(l);
+  font-weight: 600;
+}
+
+/* Fixing issues with @royalnavy component styles */
+
+.rn-masthead__main {
+  background-color: color(neutral, white);
+}
+
+.rn-badge.rn-badge--danger {
+  color: color(danger, 400) !important;
+}
+
+.rn-badge.rn-badge--neutral {
+  color: color(neutral, 400) !important;
+}
+
+.rn-btn.rn-btn--tertiary {
+  color: color(danger, 400) !important;
+}
+
+.rn-switch__option::before {
+  white-space: nowrap;
+  padding: spacing(3) !important;
+}
+
+.rn-switch__container {
+  align-items: stretch;
+
+  .rn-switch__option {
+    flex: 1;
+
+    &::before {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.rn-modal__main {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
