@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './Costs.scss'
-
 import { DefaultLayout } from '../../layouts/Default'
 import CostRecordListContainer from '../../components/containers/CostRecordListContainer'
 import CostCardContainer from '../../components/containers/CostCardContainer'

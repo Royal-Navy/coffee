@@ -1,17 +1,17 @@
-@import '@royalnavy/css-framework';
+@use "@royalnavy/css-framework" as *;
 
 .payment-list {
   margin: 0;
-  padding: spacing(4) spacing(4) 0;
+  padding: spacing("4") spacing("4") 0;
 }
 
 .payment-list__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dashed color(neutral, 100);
-  padding: spacing(4) 0;
-  font-size: font-size(xs);
+  border-bottom: 1px dashed color("neutral", "100");
+  padding: spacing("4") 0;
+  font-size: font-size("xs");
   font-weight: 600;
 
   &:first-of-type {
@@ -19,20 +19,20 @@
   }
 
   .rn-badge {
-    margin-left: spacing(2);
+    margin-left: spacing("2");
   }
 
   &.is-missed {
-    color: color(danger, 400);
+    color: color("danger", "400");
   }
 }
 
 .payment-list .payment-list__amount {
   display: flex;
   align-items: center;
-  font-size: font-size(s);
+  font-size: font-size("s");
 }
 
 .payment-list .payment-list__date {
-  color: color(neutral, 300);
+  color: color("neutral", "300");
 }

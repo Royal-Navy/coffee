@@ -1,13 +1,13 @@
-@import '@royalnavy/css-framework';
+@use "@royalnavy/css-framework" as *;
 
 .record-list {
-  padding: spacing(2) 0 spacing(4);
-  background-color: color(neutral, white);
+  padding: spacing("2") 0 spacing("4");
+  background-color: color("neutral", "white");
   border-radius: 4px;
-  border: 1px solid color(neutral, 100);
-  font-size: font-size(xs);
+  border: 1px solid color("neutral", "100");
+  font-size: font-size("xs");
   font-weight: 600;
-  color: color(neutral, 400);
+  color: color("neutral", "400");
 }
 
 .record-list__table {
@@ -17,19 +17,19 @@
 }
 
 .record-list__row {
-  border-bottom: 1px dashed color(neutral, 100);
+  border-bottom: 1px dashed color("neutral", "100");
   cursor: pointer;
 
   td {
-    padding: spacing(2) spacing(4);
+    padding: spacing("2") spacing("4");
   }
 
   &.is-active {
-    background-color: color(primary, 000);
+    background-color: color("action", "000");
   }
 
   &:hover {
-    background-color: color(neutral, 000);
+    background-color: color("neutral", "000");
   }
 }
 
@@ -38,7 +38,7 @@
   align-items: center;
 
   .rn-avatar {
-    margin-right: spacing(3);
+    margin-right: spacing("3");
   }
 }
 
@@ -48,17 +48,17 @@
   text-transform: uppercase;
 
   svg {
-    margin-right: spacing(1);
+    margin-right: spacing("1");
   }
 }
 
 .record-list__cost {
-  font-size: font-size(m);
-  color: color(neutral, 500);
+  font-size: font-size("m");
+  color: color("neutral", "500");
 
   span {
-    font-size: font-size(xs);
-    color: color(neutral, 300);
+    font-size: font-size("xs");
+    color: color("neutral", "300");
   }
 }
 
@@ -67,31 +67,31 @@
   align-items: center;
 
   svg {
-    margin-right: spacing(1);
+    margin-right: spacing("1");
   }
 }
 
 .record-list__status {
   &.is-paid {
     svg {
-      color: color(success, 500);
+      color: color("success", "500");
     }
   }
 
   &.is-overdue {
     svg {
-      color: color(danger, 500);
+      color: color("danger", "500");
     }
   }
 }
 
 .record-list__empty {
   text-align: center;
-  margin: spacing(1) 0 0;
+  margin: spacing("1") 0 0;
 }
 
 .record-list__price {
-  color: color(danger, 400);
+  color: color("danger", "400");
 }
 
 .record-list--costs .record-list__row {

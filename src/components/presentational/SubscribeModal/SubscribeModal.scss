@@ -1,4 +1,4 @@
-@import '@royalnavy/css-framework';
+@use "@royalnavy/css-framework" as *;
 
 .subscribe-modal {
   //
@@ -6,31 +6,31 @@
 
 .subscribe-modal__header {
   display: flex;
-  background-color: color(neutral, 000);
+  background-color: color("neutral", "000");
 
   div {
     display: flex;
     width: 50%;
     flex-direction: column;
-    padding: spacing(8);
+    padding: spacing("8");
 
     span {
       font-weight: 600;
-      font-size: font-size(m);
-      margin-top: spacing(4);
+      font-size: font-size("m");
+      margin-top: spacing("4");
     }
 
     p {
       font-weight: 600;
-      font-size: font-size(s);
-      color: color(neutral, 300);
-      margin-top: spacing(2);
+      font-size: font-size("s");
+      color: color("neutral", "300");
+      margin-top: spacing("2");
     }
   }
 }
 
 .subscribe-modal__body {
-  padding: spacing(2) spacing(4);
+  padding: spacing("2") spacing("4");
 }
 
 .subscribe-modal__form {

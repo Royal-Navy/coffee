@@ -4,8 +4,6 @@ import uuid from 'uuid'
 
 import { Badge } from '@royalnavy/react-component-library'
 
-import './PaymentList.scss'
-
 export const PaymentList = ({ payments }) => {
   return (
     <ol className="payment-list">
