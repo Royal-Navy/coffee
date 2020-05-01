@@ -6,8 +6,6 @@ import uuid from 'uuid'
 import { Avatar, Badge } from '@royalnavy/react-component-library'
 import { IconCheckCircle, IconChat } from '@royalnavy/icon-library'
 
-import './RecordList.scss'
-
 export const SubscriptionRecordList = withRouter(
   ({ match, history, subscriptions }) => {
     function isActive(id) {

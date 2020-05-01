@@ -9,8 +9,6 @@ import { Modal } from '@royalnavy/react-component-library'
 import { Formik as FormikComponents } from '@royalnavy/react-component-library'
 import { IconPerson, IconCreditCard } from '@royalnavy/icon-library'
 
-import './SubscribeModal.scss'
-
 export const SubscribeModal = withRouter(
   ({
     history,

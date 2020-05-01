@@ -1,8 +1,6 @@
 import React from 'react'
 import { withRouter, Route, Switch } from 'react-router-dom'
 
-import './Subscriptions.scss'
-
 import { DefaultLayout } from '../../layouts/Default'
 
 import SubscriptionRecordListContainer from '../../components/containers/SubscriptionRecordListContainer'

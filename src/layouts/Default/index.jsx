@@ -2,9 +2,13 @@ import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import Bowser from 'bowser'
 
-import './Default.scss'
+import {
+  Masthead,
+  MastheadNav,
+  MastheadNavItem,
+  MastheadUser,
+} from '@royalnavy/react-component-library'
 
-import { Masthead } from '@royalnavy/react-component-library'
 import { ReactComponent as AppLogo } from './logo.svg'
 
 export const DefaultLayout = withRouter(({ children, location }) => {
@@ -17,21 +21,20 @@ export const DefaultLayout = withRouter(({ children, location }) => {
   return (
     <>
       <Masthead
-        homeLink={{ href: '/' }}
-        LinkComponent={Link}
-        navItems={[
-          {
-            label: 'Subscriptions',
-            to: '/subscriptions',
-            active: isActive('/subscriptions'),
-          },
-          {
-            label: 'Costs',
-            to: '/costs',
-            active: isActive('/costs'),
-          },
-        ]}
-        user={{ initials: 'TH', href: '#' }}
+        homeLink={<Link to="/" />}
+        nav={
+          <MastheadNav>
+            <MastheadNavItem
+              link={<Link to="/subscriptions">Subscriptions</Link>}
+              isActive={isActive('/subscriptions')}
+            />
+            <MastheadNavItem
+              link={<Link to="/costs">Costs</Link>}
+              isActive={isActive('/costs')}
+            />
+          </MastheadNav>
+        }
+        user={<MastheadUser initials="TH" link={<Link to="#" />} />}
         Logo={AppLogo}
       />
       <main className="layout__main">{children}</main>

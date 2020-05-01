@@ -18,8 +18,6 @@ import {
   IconWarning,
 } from '@royalnavy/icon-library'
 
-import './InfoCard.scss'
-
 import { PaymentList } from '../PaymentList'
 
 export const InfoCard = withRouter(

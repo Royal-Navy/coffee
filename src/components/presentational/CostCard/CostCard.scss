@@ -1,9 +1,9 @@
-@import '@royalnavy/css-framework';
+@use "@royalnavy/css-framework" as *;
 
 .costcard {
   border-radius: 4px;
-  border: 1px solid color(neutral, 100);
-  background-color: color(neutral, white);
+  border: 1px solid color("neutral", "100");
+  background-color: color("neutral", "white");
   width: 20.75rem;
 }
 
@@ -18,12 +18,12 @@
     justify-content: flex-end;
     width: 50%;
     height: 7rem;
-    padding-bottom: spacing(4);
-    background-color: color(neutral, 000);
-    border-bottom: 1px solid color(neutral, 100);
+    padding-bottom: spacing("4");
+    background-color: color("neutral", "000");
+    border-bottom: 1px solid color("neutral", "100");
 
     &:first-of-type {
-      border-right: 1px solid color(neutral, 100);
+      border-right: 1px solid color("neutral", "100");
     }
 
     span {
@@ -31,16 +31,16 @@
 
       &:first-of-type {
         text-transform: uppercase;
-        color: color(neutral, 300);
-        font-size: font-size(xxs);
-        padding-bottom: spacing(1);
+        color: color("neutral", "300");
+        font-size: font-size("xxs");
+        padding-bottom: spacing("1");
       }
 
       &:last-of-type {
-        font-size: font-size(m);
+        font-size: font-size("m");
 
         &.is-positive {
-          color: color(success, 500);
+          color: color("success", "500");
         }
       }
     }
@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: font-size(s);
+  font-size: font-size("s");
 }
 
 .costcard__label {
@@ -62,11 +62,11 @@
 }
 
 .costcard__body {
-  padding: spacing(4);
+  padding: spacing("4");
 }
 
 .costcard__btn {
-  margin-top: spacing(2);
+  margin-top: spacing("2");
 }
 
 .costcard__form {

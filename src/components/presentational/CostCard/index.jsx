@@ -12,8 +12,6 @@ import { IconCreditCard } from '@royalnavy/icon-library'
 
 import { HeadingIcon } from '../HeadingIcon'
 
-import './CostCard.scss'
-
 export const CostCard = ({ total, nextMonth, handleCreate }) => {
   const { TextInput, Select } = FormikComponents
 

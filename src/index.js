@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11'
 import 'react-app-polyfill/stable'
 
-import '@royalnavy/css-framework'
+import './index.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
