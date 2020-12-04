@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@royalnavy/css-framework": "^2.10.0-alpha.32",
-    "@royalnavy/icon-library": "^2.10.0-alpha.32",
-    "@royalnavy/react-component-library": "^2.10.0-alpha.32",
+    "@royalnavy/css-framework": "^2.22.0",
+    "@royalnavy/icon-library": "^2.22.0",
+    "@royalnavy/react-component-library": "^2.22.0",
     "bowser": "^2.7.0",
     "dayjs": "^1.8.16",
     "formik": "^1.5.8",
